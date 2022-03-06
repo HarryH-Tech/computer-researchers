@@ -1,0 +1,32 @@
+#title {
+  color: white;
+}
+
+.link {
+  color: #4477ff;
+  font-size: 1.2rem;
+  background-color: white;
+  border-radius: 1rem;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin: auto 2rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+#logout-button {
+  margin: auto 2rem;
+  background-color: rgb(255, 98, 98);
+  font-weight: bold;
+}
+
+#logout-button:hover {
+  background-color: rgb(255, 144, 144);
+}
+
+#home-button {
+  margin: auto 2rem;
+  background-color: white;
+}

@@ -1,0 +1,10 @@
+#modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 3rem;
+}
+
+#confirmation-warning {
+  margin-bottom: 2rem;
+}

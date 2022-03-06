@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-container {
+  margin: 1rem 0.8rem;
+}
+
+.input {
+  border-radius: 0.4rem;
+  border: 3px solid #4477ff;
+  padding: 0.6rem;
+}
+
+.input:active {
+  transform: translateY(0.3rem);
+  transition: all 0.2s;
+}
+
+#description {
+  width: 25rem;
+}
+
+button {
+  margin-top: 2rem;
+}
