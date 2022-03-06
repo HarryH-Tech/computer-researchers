@@ -1,7 +1,5 @@
-import { flattenDiagnosticMessageText } from 'typescript';
 import User from './user-schema';
-const jwt = require('jsonwebtoken'); //generate signed token
-const expressJwt = require('express-jwt'); //authorization check
+import jwt from 'jsonwebtoken';
 
 // REGISTER
 export const register = async (req: any, res: any) => {
@@ -63,7 +61,7 @@ export const attemptLogin = async (req: any, res: any) => {
         {
           _id: user._id,
         },
-        process.env.JWT_SECRET
+        process.env.JWT_SECRET!
       );
       res.cookie('t', token);
       return res.json({ token, user });
