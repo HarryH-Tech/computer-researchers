@@ -27,7 +27,7 @@ const Header = () => {
       <Container>
         <div style={{ display: 'flex', alignItems: 'space-between' }}>
           <Navbar.Brand>
-            <h1 id="title">List of Computer Researches</h1>
+            <h1 id="title">List of Computer Researchers</h1>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
         </div>
