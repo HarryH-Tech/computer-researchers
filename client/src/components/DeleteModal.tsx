@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { ResearchContext } from '../context/ResearchContext';
+import ResearchContext from '../context/ResearchContext';
 
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -15,6 +15,7 @@ const DeleteModal = () => {
     researcher,
     deleteResearcher,
     setSuccessMessage,
+    // @ts-expect-error
   } = useContext(ResearchContext) as unknown as ResearcherContextType;
 
   const confirmDeleteResearcher = () => {

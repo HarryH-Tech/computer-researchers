@@ -1,6 +1,5 @@
-import React, { useContext, useState, FormEvent, FC } from 'react';
-import { ResearchContext } from '../context/ResearchContext';
-import { v4 as uuidv4 } from 'uuid';
+import React, { ReactNode, useContext, useState, FormEvent, FC } from 'react';
+import ResearchContext from '../context/ResearchContext';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -14,6 +13,7 @@ import '../styles/AddResearcher.css';
 
 const AddResearcher: FC = () => {
   const { saveResearcher, errorMessage, setErrorMessage, successMessage } =
+    // @ts-expect-error
     useContext(ResearchContext) as unknown as ResearcherContextType;
 
   const [formData, setFormData] = useState<IResearcher>({

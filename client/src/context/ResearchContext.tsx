@@ -1,9 +1,7 @@
 import React, { FC, useState, createContext, ReactNode } from 'react';
 import axios from 'axios';
 
-export const ResearchContext = createContext<ResearcherContextType | null>(
-  null
-);
+const ResearchContext = createContext<ResearcherContextType | null>(null);
 
 const ResearchProvider: FC<ReactNode> = ({ children }) => {
   const [researchers, setResearchers] = useState<IResearcher[]>([]);

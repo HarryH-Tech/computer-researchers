@@ -1,7 +1,7 @@
 import React, { FC, useState, createContext, ReactNode } from 'react';
 import axios from 'axios';
 
-export const AuthContext = createContext<AuthContextType | null>(null);
+const AuthContext = createContext<AuthContextType | null>(null);
 
 const AuthProvider: FC<ReactNode> = ({ children }) => {
   const [userRegisterDetails, setUserRegisterDetails] = useState<IUserRegister>(

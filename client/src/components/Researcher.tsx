@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useContext } from 'react';
-import { ResearchContext } from '../context/ResearchContext';
+import ResearchContext from '../context/ResearchContext';
 import { useParams } from 'react-router-dom';
 
 import Card from 'react-bootstrap/Card';
@@ -8,12 +8,12 @@ const Researcher: FC = () => {
   const params = useParams();
 
   const { getResearcher, researcher } = useContext(
+    // @ts-expect-error
     ResearchContext
   ) as unknown as ResearcherContextType;
 
   useEffect(() => {
     getResearcher(params.id!);
-
     console.log(params);
   }, []);
 

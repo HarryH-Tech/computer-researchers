@@ -1,5 +1,5 @@
 import React, { useContext, FormEvent, useEffect, useState } from 'react';
-import { AuthContext } from '../../context/AuthContext';
+import AuthContext from '../../context/AuthContext';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -16,6 +16,7 @@ const Login = () => {
     setUserLoginDetails,
     userErrorMessage,
     setUserErrorMessage,
+    // @ts-expect-error
   } = useContext(AuthContext) as unknown as AuthContextType;
 
   /*

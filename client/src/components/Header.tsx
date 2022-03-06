@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
+import AuthContext from '../context/AuthContext';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
@@ -11,6 +11,7 @@ import '../styles/Header.css';
 
 const Header = () => {
   const { userLoggedInDetails, logout } = useContext(
+    // @ts-expect-error
     AuthContext
   ) as unknown as AuthContextType;
 

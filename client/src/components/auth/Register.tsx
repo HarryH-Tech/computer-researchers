@@ -1,5 +1,5 @@
 import React, { useContext, FormEvent, useEffect, useState } from 'react';
-import { AuthContext } from '../../context/AuthContext';
+import AuthContext from '../../context/AuthContext';
 import ErrorMessage from '../utils/ErrorMessage';
 import SuccessMessage from '../utils/SuccessMessage';
 
@@ -33,6 +33,7 @@ const Register = () => {
     setUserLoading,
     setUserErrorMessage,
     attemptRegister,
+    // @ts-expect-error
   } = useContext(AuthContext) as unknown as AuthContextType;
 
   const { username, email, password, confirmPassword } = formDetails;

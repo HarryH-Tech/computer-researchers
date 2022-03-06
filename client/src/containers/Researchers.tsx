@@ -1,8 +1,8 @@
 import React, { useContext, useEffect, ChangeEvent } from 'react';
 import { Link } from 'react-router-dom';
 
-import { ResearchContext } from '../context/ResearchContext';
-import { AuthContext } from '../context/AuthContext';
+import ResearchContext from '../context/ResearchContext';
+import AuthContext from '../context/AuthContext';
 
 import DeleteModal from '../components/DeleteModal';
 import EditModal from '../components/EditModal';
@@ -26,9 +26,11 @@ const Researchers = () => {
     setShowDeleteModal,
     setShowEditModal,
     setResearcher,
+    // @ts-expect-error
   } = useContext(ResearchContext) as unknown as ResearcherContextType;
 
   const { userLoggedInDetails, setUserLoggedInDetails } = useContext(
+    // @ts-expect-error
     AuthContext
   ) as unknown as AuthContextType;
 
