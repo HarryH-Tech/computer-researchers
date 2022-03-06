@@ -1,4 +1,4 @@
-import { FC, useEffect, useContext } from 'react';
+import React, { FC, useEffect, useContext } from 'react';
 import { ResearchContext } from '../context/ResearchContext';
 import { useParams } from 'react-router-dom';
 

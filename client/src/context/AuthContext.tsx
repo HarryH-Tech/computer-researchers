@@ -1,4 +1,4 @@
-import { FC, useState, createContext, ReactNode } from 'react';
+import React, { FC, useState, createContext, ReactNode } from 'react';
 import axios from 'axios';
 
 export const AuthContext = createContext<AuthContextType | null>(null);
