@@ -1,60 +1,118 @@
-"use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
+import { ResearchContext } from '../context/ResearchContext';
+import '../styles/DeleteModal.css';
+import { XCircleFill, CheckCircleFill } from 'react-bootstrap-icons';
+var __createBinding =
+  (this && this.__createBinding) ||
+  (Object.create
+    ? function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        Object.defineProperty(o, k2, {
+          enumerable: true,
+          get: function () {
+            return m[k];
+          },
+        });
+      }
+    : function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        o[k2] = m[k];
+      });
+var __setModuleDefault =
+  (this && this.__setModuleDefault) ||
+  (Object.create
+    ? function (o, v) {
+        Object.defineProperty(o, 'default', { enumerable: true, value: v });
+      }
+    : function (o, v) {
+        o['default'] = v;
+      });
+var __importStar =
+  (this && this.__importStar) ||
+  function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null)
+      for (var k in mod)
+        if (k !== 'default' && Object.prototype.hasOwnProperty.call(mod, k))
+          __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importStar(require("react"));
-const ResearchContext_1 = require("../context/ResearchContext");
-const Modal_1 = __importDefault(require("react-bootstrap/Modal"));
-const Button_1 = __importDefault(require("react-bootstrap/Button"));
-require("../styles/DeleteModal.css");
-const react_bootstrap_icons_1 = require("react-bootstrap-icons");
+  };
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
+Object.defineProperty(exports, '__esModule', { value: true });
+const react_1 = __importStar(require('react'));
+const Modal_1 = __importDefault(require('react-bootstrap/Modal'));
+const Button_1 = __importDefault(require('react-bootstrap/Button'));
 const DeleteModal = () => {
-    const { showDeleteModal, setShowDeleteModal, researcher, deleteResearcher, setSuccessMessage, } = (0, react_1.useContext)(ResearchContext_1.ResearchContext);
-    const confirmDeleteResearcher = () => {
-        deleteResearcher(researcher._id);
-        console.log(researcher);
-        setShowDeleteModal(false);
-        setSuccessMessage(`${researcher.name} has been successfully deleted.`);
-    };
-    return (react_1.default.createElement(react_1.default.Fragment, null,
-        react_1.default.createElement(Modal_1.default, { show: showDeleteModal, backdrop: "static", onHide: () => setShowDeleteModal(false) },
-            react_1.default.createElement(Modal_1.default.Header, { closeButton: true },
-                react_1.default.createElement(Modal_1.default.Title, null,
-                    researcher.name,
-                    " (Born: ",
-                    react_1.default.createElement("i", null, researcher.dob),
-                    ")")),
-            react_1.default.createElement(Modal_1.default.Body, null, researcher.description),
-            react_1.default.createElement(Modal_1.default.Footer, { id: "modal-footer" },
-                react_1.default.createElement("h4", { id: "confirmation-warning" },
-                    "Are you sure you want to delete ",
-                    react_1.default.createElement("i", null, researcher.name),
-                    "?"),
-                react_1.default.createElement(Button_1.default, { variant: "primary", onClick: () => setShowDeleteModal(false) },
-                    "Close ",
-                    react_1.default.createElement(react_bootstrap_icons_1.XCircleFill, null)),
-                react_1.default.createElement(Button_1.default, { variant: "danger", onClick: confirmDeleteResearcher },
-                    "Confirm ",
-                    react_1.default.createElement(react_bootstrap_icons_1.CheckCircleFill, null))))));
+  const {
+    showDeleteModal,
+    setShowDeleteModal,
+    researcher,
+    deleteResearcher,
+    setSuccessMessage,
+  } = (0, react_1.useContext)(ResearchContext);
+  const confirmDeleteResearcher = () => {
+    deleteResearcher(researcher._id);
+    console.log(researcher);
+    setShowDeleteModal(false);
+    setSuccessMessage(`${researcher.name} has been successfully deleted.`);
+  };
+  return react_1.default.createElement(
+    react_1.default.Fragment,
+    null,
+    react_1.default.createElement(
+      Modal_1.default,
+      {
+        show: showDeleteModal,
+        backdrop: 'static',
+        onHide: () => setShowDeleteModal(false),
+      },
+      react_1.default.createElement(
+        Modal_1.default.Header,
+        { closeButton: true },
+        react_1.default.createElement(
+          Modal_1.default.Title,
+          null,
+          researcher.name,
+          ' (Born: ',
+          react_1.default.createElement('i', null, researcher.dob),
+          ')'
+        )
+      ),
+      react_1.default.createElement(
+        Modal_1.default.Body,
+        null,
+        researcher.description
+      ),
+      react_1.default.createElement(
+        Modal_1.default.Footer,
+        { id: 'modal-footer' },
+        react_1.default.createElement(
+          'h4',
+          { id: 'confirmation-warning' },
+          'Are you sure you want to delete ',
+          react_1.default.createElement('i', null, researcher.name),
+          '?'
+        ),
+        react_1.default.createElement(
+          Button_1.default,
+          { variant: 'primary', onClick: () => setShowDeleteModal(false) },
+          'Close ',
+          react_1.default.createElement(XCircleFill, null)
+        ),
+        react_1.default.createElement(
+          Button_1.default,
+          { variant: 'danger', onClick: confirmDeleteResearcher },
+          'Confirm ',
+          react_1.default.createElement(CheckCircleFill, null)
+        )
+      )
+    )
+  );
 };
-exports.default = DeleteModal;
+const _default = DeleteModal;
+export { _default as default };
