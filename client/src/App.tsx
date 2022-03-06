@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { AuthContext } from './context/AuthContext';
+import React from 'react';
 
 import Header from './components/Header';
 import Researchers from './containers/Researchers';
@@ -14,11 +13,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/Main.css';
 
 export default function App() {
-  const [user, setUser] = useState();
-  const { userLoggedInDetails } = useContext(
-    AuthContext
-  ) as unknown as AuthContextType;
-
   // @ts-expect-error
   const localStorageUser = JSON.parse(localStorage.getItem('user'));
 

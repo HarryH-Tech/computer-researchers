@@ -1,4 +1,4 @@
-import React, { useContext, useState, MouseEvent, FormEvent } from 'react';
+import React, { useContext, MouseEvent, FormEvent } from 'react';
 
 import { ResearchContext } from '../context/ResearchContext';
 
@@ -7,12 +7,6 @@ import Button from 'react-bootstrap/Button';
 import { CheckCircleFill, XCircleFill } from 'react-bootstrap-icons';
 
 const EditModal = () => {
-  // const [updatedResearcher, setUpdatedResearcher] = useState({
-  //   name: '',
-  //   description: '',
-  //   dob: '',
-  // });
-
   const {
     researcher,
     showEditModal,

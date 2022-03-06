@@ -13,13 +13,8 @@ import SuccessMessage from './utils/SuccessMessage';
 import '../styles/AddResearcher.css';
 
 const AddResearcher: FC = () => {
-  const {
-    saveResearcher,
-    errorMessage,
-    getAllResearchers,
-    setErrorMessage,
-    successMessage,
-  } = useContext(ResearchContext) as unknown as ResearcherContextType;
+  const { saveResearcher, errorMessage, setErrorMessage, successMessage } =
+    useContext(ResearchContext) as unknown as ResearcherContextType;
 
   const [formData, setFormData] = useState<IResearcher>({
     name: '',
