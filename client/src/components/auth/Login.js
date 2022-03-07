@@ -1,4 +1,4 @@
-import { AuthContext } from '../../context/AuthContext';
+'use strict';
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -43,6 +43,7 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importStar(require('react'));
+const AuthContext_1 = require('../../context/AuthContext');
 const Form_1 = __importDefault(require('react-bootstrap/Form'));
 const Button_1 = __importDefault(require('react-bootstrap/Button'));
 const Card_1 = __importDefault(require('react-bootstrap/Card'));
@@ -56,7 +57,7 @@ const Login = () => {
     setUserLoginDetails,
     userErrorMessage,
     setUserErrorMessage,
-  } = (0, react_1.useContext)(AuthContext);
+  } = (0, react_1.useContext)(AuthContext_1.AuthContext);
   /*
      Remove error message on page load so if user
      is shown error message then clicks on
@@ -139,5 +140,4 @@ const Login = () => {
     )
   );
 };
-const _default = Login;
-export { _default as default };
+exports.default = Login;

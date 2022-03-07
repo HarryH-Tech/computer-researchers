@@ -1,6 +1,4 @@
-import { ResearchContext } from '../context/ResearchContext';
-import { PlusCircleFill } from 'react-bootstrap-icons';
-import '../styles/AddResearcher.css';
+'use strict';
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -45,11 +43,14 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importStar(require('react'));
+const ResearchContext_1 = require('../context/ResearchContext');
 const Form_1 = __importDefault(require('react-bootstrap/Form'));
 const Button_1 = __importDefault(require('react-bootstrap/Button'));
 const Card_1 = __importDefault(require('react-bootstrap/Card'));
+const react_bootstrap_icons_1 = require('react-bootstrap-icons');
 const ErrorMessage_1 = __importDefault(require('./utils/ErrorMessage'));
 const SuccessMessage_1 = __importDefault(require('./utils/SuccessMessage'));
+require('../styles/AddResearcher.css');
 const AddResearcher = () => {
   const {
     saveResearcher,
@@ -57,7 +58,7 @@ const AddResearcher = () => {
     getAllResearchers,
     setErrorMessage,
     successMessage,
-  } = (0, react_1.useContext)(ResearchContext);
+  } = (0, react_1.useContext)(ResearchContext_1.ResearchContext);
   const [formData, setFormData] = (0, react_1.useState)({
     name: '',
     description: '',
@@ -148,7 +149,10 @@ const AddResearcher = () => {
             size: 'lg',
           },
           'Add Researcher ',
-          react_1.default.createElement(PlusCircleFill, null)
+          react_1.default.createElement(
+            react_bootstrap_icons_1.PlusCircleFill,
+            null
+          )
         ),
         react_1.default.createElement('br', null),
         react_1.default.createElement('br', null)
@@ -159,5 +163,4 @@ const AddResearcher = () => {
       react_1.default.createElement(SuccessMessage_1.default, null)
   );
 };
-const _default = AddResearcher;
-export { _default as default };
+exports.default = AddResearcher;

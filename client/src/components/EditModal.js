@@ -1,5 +1,4 @@
-import { ResearchContext } from '../context/ResearchContext';
-import { XCircleFill, CheckCircleFill } from 'react-bootstrap-icons';
+'use strict';
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -44,8 +43,10 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importStar(require('react'));
+const ResearchContext_1 = require('../context/ResearchContext');
 const Modal_1 = __importDefault(require('react-bootstrap/Modal'));
 const Button_1 = __importDefault(require('react-bootstrap/Button'));
+const react_bootstrap_icons_1 = require('react-bootstrap-icons');
 const EditModal = () => {
   // const [updatedResearcher, setUpdatedResearcher] = useState({
   //   name: '',
@@ -58,7 +59,7 @@ const EditModal = () => {
     setResearcher,
     setShowEditModal,
     editResearcher,
-  } = (0, react_1.useContext)(ResearchContext);
+  } = (0, react_1.useContext)(ResearchContext_1.ResearchContext);
   const handleInputChange = (e) => {
     console.log(researcher);
     setResearcher(
@@ -123,17 +124,22 @@ const EditModal = () => {
           Button_1.default,
           { variant: 'primary', onClick: () => setShowEditModal(false) },
           'Close ',
-          react_1.default.createElement(XCircleFill, null)
+          react_1.default.createElement(
+            react_bootstrap_icons_1.XCircleFill,
+            null
+          )
         ),
         react_1.default.createElement(
           Button_1.default,
           { variant: 'danger', onClick: confirmEditResearcher },
           'Confirm Edit ',
-          react_1.default.createElement(CheckCircleFill, null)
+          react_1.default.createElement(
+            react_bootstrap_icons_1.CheckCircleFill,
+            null
+          )
         )
       )
     )
   );
 };
-const _default = EditModal;
-export { _default as default };
+exports.default = EditModal;

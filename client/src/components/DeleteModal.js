@@ -1,6 +1,4 @@
-import { ResearchContext } from '../context/ResearchContext';
-import '../styles/DeleteModal.css';
-import { XCircleFill, CheckCircleFill } from 'react-bootstrap-icons';
+'use strict';
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -45,8 +43,11 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importStar(require('react'));
+const ResearchContext_1 = require('../context/ResearchContext');
 const Modal_1 = __importDefault(require('react-bootstrap/Modal'));
 const Button_1 = __importDefault(require('react-bootstrap/Button'));
+require('../styles/DeleteModal.css');
+const react_bootstrap_icons_1 = require('react-bootstrap-icons');
 const DeleteModal = () => {
   const {
     showDeleteModal,
@@ -54,7 +55,7 @@ const DeleteModal = () => {
     researcher,
     deleteResearcher,
     setSuccessMessage,
-  } = (0, react_1.useContext)(ResearchContext);
+  } = (0, react_1.useContext)(ResearchContext_1.ResearchContext);
   const confirmDeleteResearcher = () => {
     deleteResearcher(researcher._id);
     console.log(researcher);
@@ -102,17 +103,22 @@ const DeleteModal = () => {
           Button_1.default,
           { variant: 'primary', onClick: () => setShowDeleteModal(false) },
           'Close ',
-          react_1.default.createElement(XCircleFill, null)
+          react_1.default.createElement(
+            react_bootstrap_icons_1.XCircleFill,
+            null
+          )
         ),
         react_1.default.createElement(
           Button_1.default,
           { variant: 'danger', onClick: confirmDeleteResearcher },
           'Confirm ',
-          react_1.default.createElement(CheckCircleFill, null)
+          react_1.default.createElement(
+            react_bootstrap_icons_1.CheckCircleFill,
+            null
+          )
         )
       )
     )
   );
 };
-const _default = DeleteModal;
-export { _default as default };
+exports.default = DeleteModal;

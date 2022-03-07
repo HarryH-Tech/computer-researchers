@@ -1,7 +1,4 @@
-import { Link } from 'react-router-dom';
-import { ResearchContext } from '../context/ResearchContext';
-import { AuthContext } from '../context/AuthContext';
-import { XCircleFill, Hammer } from 'react-bootstrap-icons';
+'use strict';
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -46,12 +43,16 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importStar(require('react'));
+const react_router_dom_1 = require('react-router-dom');
+const ResearchContext_1 = require('../context/ResearchContext');
+const AuthContext_1 = require('../context/AuthContext');
 const DeleteModal_1 = __importDefault(require('../components/DeleteModal'));
 const EditModal_1 = __importDefault(require('../components/EditModal'));
 const AddResearcher_1 = __importDefault(require('../components/AddResearcher'));
 const Card_1 = __importDefault(require('react-bootstrap/Card'));
 const ButtonGroup_1 = __importDefault(require('react-bootstrap/ButtonGroup'));
 const Button_1 = __importDefault(require('react-bootstrap/Button'));
+const react_bootstrap_icons_1 = require('react-bootstrap-icons');
 const Researchers = () => {
   const selectedResearchers = [];
   const {
@@ -64,9 +65,9 @@ const Researchers = () => {
     setShowDeleteModal,
     setShowEditModal,
     setResearcher,
-  } = (0, react_1.useContext)(ResearchContext);
+  } = (0, react_1.useContext)(ResearchContext_1.ResearchContext);
   const { userLoggedInDetails, setUserLoggedInDetails } = (0,
-  react_1.useContext)(AuthContext);
+  react_1.useContext)(AuthContext_1.AuthContext);
   // @ts-expect-error
   const localStorageUser = JSON.parse(localStorage.getItem('user'));
   // Display list of all researchers on initial render
@@ -152,7 +153,7 @@ const Researchers = () => {
             Card_1.default.Title,
             { style: { textAlign: 'center', textDecoration: 'underline' } },
             react_1.default.createElement(
-              Link,
+              react_router_dom_1.Link,
               { to: `${researcher.name}` },
               react_1.default.createElement('h2', null, researcher.name)
             )
@@ -177,7 +178,10 @@ const Researchers = () => {
                   onClick: (e) => handleDeleteResearcher(e, researcher._id),
                 },
                 'Delete ',
-                react_1.default.createElement(XCircleFill, null)
+                react_1.default.createElement(
+                  react_bootstrap_icons_1.XCircleFill,
+                  null
+                )
               ),
               react_1.default.createElement(
                 Button_1.default,
@@ -187,7 +191,10 @@ const Researchers = () => {
                   onClick: (e) => handleEditResearcher(e, researcher._id),
                 },
                 'Edit ',
-                react_1.default.createElement(Hammer, null)
+                react_1.default.createElement(
+                  react_bootstrap_icons_1.Hammer,
+                  null
+                )
               ),
               react_1.default.createElement('input', {
                 type: 'checkbox',
@@ -204,5 +211,4 @@ const Researchers = () => {
     showEditModal && react_1.default.createElement(EditModal_1.default, null)
   );
 };
-const _default = Researchers;
-export { _default as default };
+exports.default = Researchers;

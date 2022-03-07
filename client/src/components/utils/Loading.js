@@ -1,4 +1,4 @@
-import '../../styles/Loading.css';
+'use strict';
 var __importDefault =
   (this && this.__importDefault) ||
   function (mod) {
@@ -6,6 +6,7 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importDefault(require('react'));
+require('../../styles/Loading.css');
 const Loading = () => {
   return react_1.default.createElement(
     'div',
@@ -13,5 +14,4 @@ const Loading = () => {
     react_1.default.createElement('div', null)
   );
 };
-const _default = Loading;
-export { _default as default };
+exports.default = Loading;

@@ -1,5 +1,4 @@
-import { ResearchContext } from '../../context/ResearchContext';
-import { AuthContext } from '../../context/AuthContext';
+'use strict';
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -44,13 +43,15 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importStar(require('react'));
+const ResearchContext_1 = require('../../context/ResearchContext');
+const AuthContext_1 = require('../../context/AuthContext');
 const Alert_1 = __importDefault(require('react-bootstrap/Alert'));
 function ErrorMessage() {
   const { errorMessage, setErrorMessage } = (0, react_1.useContext)(
-    ResearchContext
+    ResearchContext_1.ResearchContext
   );
   const { userErrorMessage, setUserErrorMessage } = (0, react_1.useContext)(
-    AuthContext
+    AuthContext_1.AuthContext
   );
   const removeErrorMessages = () => {
     console.log('HI');
@@ -68,5 +69,4 @@ function ErrorMessage() {
     errorMessage || userErrorMessage
   );
 }
-const _default = ErrorMessage;
-export { _default as default };
+exports.default = ErrorMessage;

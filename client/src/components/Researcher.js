@@ -1,5 +1,4 @@
-import { ResearchContext } from '../context/ResearchContext';
-import { useParams } from 'react-router-dom';
+'use strict';
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -44,11 +43,13 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importStar(require('react'));
+const ResearchContext_1 = require('../context/ResearchContext');
+const react_router_dom_1 = require('react-router-dom');
 const Card_1 = __importDefault(require('react-bootstrap/Card'));
 const Researcher = () => {
-  const params = (0, useParams)();
+  const params = (0, react_router_dom_1.useParams)();
   const { getResearcher, researcher } = (0, react_1.useContext)(
-    ResearchContext
+    ResearchContext_1.ResearchContext
   );
   (0, react_1.useEffect)(() => {
     getResearcher(params.id);
@@ -70,5 +71,4 @@ const Researcher = () => {
     )
   );
 };
-const _default = Researcher;
-export { _default as default };
+exports.default = Researcher;

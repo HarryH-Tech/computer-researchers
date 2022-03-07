@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../context/AuthContext';
-import '../styles/Header.css';
+'use strict';
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -45,12 +43,17 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importStar(require('react'));
+const react_router_dom_1 = require('react-router-dom');
+const AuthContext_1 = require('../context/AuthContext');
 const Navbar_1 = __importDefault(require('react-bootstrap/Navbar'));
 const Nav_1 = __importDefault(require('react-bootstrap/Nav'));
 const Button_1 = __importDefault(require('react-bootstrap/Button'));
 const Container_1 = __importDefault(require('react-bootstrap/Container'));
+require('../styles/Header.css');
 const Header = () => {
-  const { userLoggedInDetails, logout } = (0, react_1.useContext)(AuthContext);
+  const { userLoggedInDetails, logout } = (0, react_1.useContext)(
+    AuthContext_1.AuthContext
+  );
   const handleLogout = () => {
     logout();
     console.log(userLoggedInDetails);
@@ -86,7 +89,11 @@ const Header = () => {
             react_1.default.createElement(
               Button_1.default,
               { id: 'home-button' },
-              react_1.default.createElement(Link, { to: '/' }, 'Home')
+              react_1.default.createElement(
+                react_router_dom_1.Link,
+                { to: '/' },
+                'Home'
+              )
             ),
             react_1.default.createElement(
               Button_1.default,
@@ -102,13 +109,13 @@ const Header = () => {
               { className: 'me-auto' },
               ' ',
               react_1.default.createElement(
-                Link,
+                react_router_dom_1.Link,
                 { to: '/register', className: 'link' },
                 'Register'
               ),
               ' ',
               react_1.default.createElement(
-                Link,
+                react_router_dom_1.Link,
                 { to: '/', className: 'link' },
                 'Login'
               )
@@ -117,5 +124,4 @@ const Header = () => {
     )
   );
 };
-const _default = Header;
-export { _default as default };
+exports.default = Header;

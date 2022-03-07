@@ -1,5 +1,4 @@
-import { AuthContext } from '../../context/AuthContext';
-import '../../styles/Register.css';
+'use strict';
 var __createBinding =
   (this && this.__createBinding) ||
   (Object.create
@@ -44,11 +43,13 @@ var __importDefault =
   };
 Object.defineProperty(exports, '__esModule', { value: true });
 const react_1 = __importStar(require('react'));
+const AuthContext_1 = require('../../context/AuthContext');
 const ErrorMessage_1 = __importDefault(require('../utils/ErrorMessage'));
 const SuccessMessage_1 = __importDefault(require('../utils/SuccessMessage'));
 const Form_1 = __importDefault(require('react-bootstrap/Form'));
 const Button_1 = __importDefault(require('react-bootstrap/Button'));
 const Card_1 = __importDefault(require('react-bootstrap/Card'));
+require('../../styles/Register.css');
 const Register = () => {
   const [formDetails, setFormDetails] = (0, react_1.useState)({
     username: '',
@@ -73,7 +74,7 @@ const Register = () => {
     setUserLoading,
     setUserErrorMessage,
     attemptRegister,
-  } = (0, react_1.useContext)(AuthContext);
+  } = (0, react_1.useContext)(AuthContext_1.AuthContext);
   const { username, email, password, confirmPassword } = formDetails;
   const { show, number, length, capital } = passwordRequirements;
   /*
@@ -230,5 +231,4 @@ const Register = () => {
     )
   );
 };
-const _default = Register;
-export { _default as default };
+exports.default = Register;

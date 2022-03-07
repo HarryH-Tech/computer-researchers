@@ -75,10 +75,10 @@ var __importDefault =
     return mod && mod.__esModule ? mod : { default: mod };
   };
 Object.defineProperty(exports, '__esModule', { value: true });
-
+exports.ResearchContext = void 0;
 const react_1 = __importStar(require('react'));
 const axios_1 = __importDefault(require('axios'));
-export const ResearchContext = (0, react_1.createContext)(null);
+exports.ResearchContext = (0, react_1.createContext)(null);
 const ResearchProvider = ({ children }) => {
   const [researchers, setResearchers] = (0, react_1.useState)([]);
   const [researcher, setResearcher] = (0, react_1.useState)({
@@ -218,7 +218,7 @@ const ResearchProvider = ({ children }) => {
       });
   };
   return react_1.default.createElement(
-    ResearchContext.Provider,
+    exports.ResearchContext.Provider,
     {
       value: {
         researchers,
@@ -245,5 +245,4 @@ const ResearchProvider = ({ children }) => {
     children
   );
 };
-const _default = ResearchProvider;
-export { _default as default };
+exports.default = ResearchProvider;

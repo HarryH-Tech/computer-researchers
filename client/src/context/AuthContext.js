@@ -75,9 +75,10 @@ var __importDefault =
     return mod && mod.__esModule ? mod : { default: mod };
   };
 Object.defineProperty(exports, '__esModule', { value: true });
+exports.AuthContext = void 0;
 const react_1 = __importStar(require('react'));
 const axios_1 = __importDefault(require('axios'));
-export const AuthContext = (0, react_1.createContext)(null);
+exports.AuthContext = (0, react_1.createContext)(null);
 const AuthProvider = ({ children }) => {
   const [userRegisterDetails, setUserRegisterDetails] = (0, react_1.useState)({
     username: '',
@@ -166,7 +167,7 @@ const AuthProvider = ({ children }) => {
     console.log('LOGOUT');
   };
   return react_1.default.createElement(
-    AuthContext.Provider,
+    exports.AuthContext.Provider,
     {
       value: {
         userRegisterDetails,
@@ -189,5 +190,4 @@ const AuthProvider = ({ children }) => {
     children
   );
 };
-const _default = AuthProvider;
-export { _default as default };
+exports.default = AuthProvider;

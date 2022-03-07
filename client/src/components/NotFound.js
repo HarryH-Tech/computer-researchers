@@ -9,5 +9,4 @@ const react_1 = __importDefault(require('react'));
 function NotFound() {
   return react_1.default.createElement('div', null, 'NotFound');
 }
-const _default = NotFound;
-export { _default as default };
+exports.default = NotFound;
